@@ -1,4 +1,7 @@
-LDA
-===
+# Latent Dirichlet Allocation
 
-Implementation of Latent Dirichlet Allocation for BIOSTATS 615
+Prashanth Dannamaneni, Steven Hoelscher, Corbin Quick
+
+## Compiling
+
+Type `make` in shell
