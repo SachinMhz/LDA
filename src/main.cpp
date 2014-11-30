@@ -1,24 +1,32 @@
-#include<iostream>
-
-#include "LDA.h"
-
+#include <iostream>
+#include "estimate.h"
 #include "Estep.h"
 
 // format  [Num_of_topics] [alpha] [directory]
+
 bool check_nonconvergence(double likelihood, double old_likelihood, double ZEPS, int iteration);
 
 void EM(corpus asso, double alpha, int num_of_topics);
-class corpus;   //forward class
-int main(int argc, char** argv){
-	corpus asso;
-	int num_of_topics = atoi(argv[1]);
-	double alpha=atof(argv[2]);
-	asso = read_data(argv[3]);
-	EM(asso,alpha,num_of_topics);
-}
 
-int MAX_ITER = 100;
-double ZEPS = 1e-4;
+class corpus;   //forward class
+
+int main(int argc, char** argv) {
+
+	// Parse arguments
+	if (argc > 1) {
+		corpus asso;
+
+		int num_of_topics = atoi(argv[1]);
+		double alpha = atof(argv[2]);
+		asso = read_data(argv[3]);
+		EM(asso, alpha, num_of_topics);
+	} else {
+		std::cout << "Usage: lda [k] [initial alpha] [corpus]" << std::endl;
+		return 1;
+	}
+
+	return 0;
+}
 
 void EM(corpus asso, double alpha, int num_of_topics){
 	document doc;
@@ -51,10 +59,4 @@ void EM(corpus asso, double alpha, int num_of_topics){
 
 	}
 
-
 }
-bool check_nonconvergence(double likelihood, double old_likelihood, double ZEPS, int iteration) {
-		double converegence = fabs(likelihood - old_likelihood) / old_likelihood;
-		if (converegence > ZEPS || iteration < MAX_ITER) return true;
-		else return false;
-	}

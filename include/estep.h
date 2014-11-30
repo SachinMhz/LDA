@@ -1,10 +1,8 @@
 #ifndef __Estep_H
 #define __Estep_H
 
-#include<iostream>
-
+#include <iostream>
 #include "LDA.h"
-
 #include "gammas.h"
 
 double Estep(document doc, model model_lda, variational_parameters v,sufficient_stats s){

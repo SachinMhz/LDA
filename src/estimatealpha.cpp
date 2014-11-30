@@ -1,10 +1,10 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <math.h>
 
 // Estimate alpha using newton raphson
 
 #include "LDA.h"
-
+#include "estimate.h"
 #include "gammas.h"
 
 double likelihood = 0;
@@ -25,8 +25,6 @@ double second_derivative(int alpha, int D, int num_of_topics, sufficient_stats s
 	return d2_likelihood;
 }
 
-int MAX_ITER = 1000;
-double ZEPS = 1e-5;
 int iteration = 0;
 double Newton_alpha(model model_lda, sufficient_stats s, int D){
 

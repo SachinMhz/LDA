@@ -2,21 +2,9 @@
 #define BLEICORPUS_H
 
 #include <vector>
+#include <iostream>
+#include "LDA.h"
 
-
-class Document {
-    public:
-        int* words;
-        int* counts;
-        int length;
-        int total;
-};
-
-class Corpus {
-    public:
-        Document** docs;
-        int numDocs;
-        int numWords;
-};
+corpus read_data(char* fname);
 
 #endif 
