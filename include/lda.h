@@ -15,7 +15,8 @@ public:
 	model(int k, int V, double alphava) :num_of_topics(k), num_of_unique_words(V), log_beta(k, V, 0), alpha(alphava){ }
 };
 
-class document{
+
+class document {
 public:
 	int total_length;
 	int length;
@@ -23,7 +24,7 @@ public:
 	std::vector<double> index;
 };
 
-class corpus{
+class corpus {
 public:
 	std::vector<document> docs;
 	std::vector<int> lengths;
