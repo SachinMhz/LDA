@@ -25,7 +25,7 @@ bool check_nonconvergence(double likelihood, double old_likelihood, double ZEPS,
 		if (converegence > ZEPS || iteration < MAX_ITER) return true;
 		else return false;
 }
-
+// Taken from http://web.science.mq.edu.au/~mjohnson/code/digamma.c
 double digamma(double x) {
 	double result = 0, xx, xx2, xx4;
 	assert(x > 0);
@@ -38,6 +38,7 @@ double digamma(double x) {
 	result += log(x) + (1. / 24.)*xx2 - (7.0 / 960.0)*xx4 + (31.0 / 8064.0)*xx4*xx2 - (127.0 / 30720.0)*xx4*xx4;
 	return result;
 }
+// Taken from Dr.Blei's Code
 
 double trigamma(double x)
 {
