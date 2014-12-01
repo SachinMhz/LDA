@@ -30,6 +30,9 @@ double Estep(document doc, model model_lda, variational_parameters v,sufficient_
 			s.word_total[k] += s.word_probabilites.data[i][k];
 		}
 	}
+
+return likelihood;	
+	
 }
 
 #endif
