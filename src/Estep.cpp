@@ -79,8 +79,10 @@ double variational_parameters::variational_inference(document doc, model model_l
 			}
 
 			for (int k = 0; k < model_lda.num_of_topics;k++){
+				std::cout << k << std::endl;
 				v.phi.data[i][k] = exp(v.phi.data[i][k] - digamma(phissum));    // phi = beta*exp(digamma(gamma)-digamma(sum of gamma over topics)
-					v.gamma[k] = v.gamma[k] + doc.counts[i] * (v.phi.data[i][k])-doc.counts[i]*(phi_subtract[k]);
+				v.gamma[k] = v.gamma[k] + doc.counts[i] * (v.phi.data[i][k])-doc.counts[i]*(phi_subtract[k]);
+
 				v_digamma[k] = digamma(v.gamma[k]);    
 			}
 		}

@@ -17,8 +17,13 @@ class document {
 public:
 	int total_length;
 	int length;
-	std::vector<double> counts;
-	std::vector<double> index;
+	std::vector<int> counts;
+	std::vector<int> index;
+	document () {};
+	document(int vocabSize) { 
+		length = vocabSize;
+		total_length = 0;
+	};
 };
 
 class corpus {
@@ -28,6 +33,11 @@ public:
 	int num_of_docs;
 	int max_length;
 	int number_of_unique_words;
+	corpus() {
+		num_of_docs = 0;
+		max_length = 0;
+		number_of_unique_words = 0;
+	};
 	// corpus(int num_of_docs, document docs) :num_of_docs(num_of_docs), lengths(num_of_docs);
 };
 

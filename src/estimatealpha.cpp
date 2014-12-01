@@ -49,4 +49,3 @@ double Newton_alpha(model model_lda, sufficient_stats s, int D){
 	alpha = exp(log_alpha);
 	return alpha;
 }
-
