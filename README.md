@@ -8,4 +8,4 @@ Type `make` in shell
 
 ## Topic Estimation
 
-`./lda [k] [alpha] [directory]`
+`./lda [k] [alpha] [file]`
